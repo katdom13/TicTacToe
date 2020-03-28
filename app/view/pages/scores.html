@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Scores</title>
+    <link href="/static/styles/vendor/bootstrap.min.css" rel="stylesheet" />
+    <link href="/static/styles/vendor/datatables.min.css" rel="stylesheet"/>
+    <link href="/static/styles/main.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid">
+        <br class="mb-4">
+        <div class="wrapper center">
+            <table id="records" class="display table table-sm mb-7" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Player</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for player in players %}
+                        <tr>
+                            <th>{{player.id}}</th>
+                            <th>{{player.score}}</th>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <a href="{{url_for('index')}}" class="btn btn-md btn-primary">
+                Play Tic Tac Toe
+            </a>
+        </div>
+    </div>
+
+    <script src="/static/scripts/vendor/jquery.min.js"></script>
+    <script src="/static/scripts/vendor/bootstrap.min.js"></script>
+    <script src="/static/scripts/vendor/datatables.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#records').DataTable();
+        } );
+    </script>
+</body>
+</html>

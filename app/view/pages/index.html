@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tic Tac Toe</title>
+    <link href="/static/styles/vendor/bootstrap.min.css" rel="stylesheet" />
+    <link href="/static/styles/vendor/datatables.min.css" rel="stylesheet"/>
+    <link href="/static/styles/main.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="wrapper mt-2">
+            <h1>Tic Tac Toe</h1>
+            <div id="board">
+                <div id="cell-1" class="cell"></div>
+                <div id="cell-2" class="cell"></div>
+                <div id="cell-3" class="cell"></div>
+                <div id="cell-4" class="cell"></div>
+                <div id="cell-5" class="cell"></div>
+                <div id="cell-6" class="cell"></div>
+                <div id="cell-7" class="cell"></div>
+                <div id="cell-8" class="cell"></div>
+                <div id="cell-9" class="cell"></div>
+            </div>
+            <h2 class="message"></h2>
+            <div id="player-action" class="mb-4" style="display: block;">
+                <input type="text" id="cell" name="cell">
+                <button id="placemark" type="button">
+                    Place Mark
+                </button>
+            </div>
+            <form id="record-form" method="POST" action="{{url_for('record')}}">
+                <button id="record" type="button" style="display: none;">
+                    Record and see scores
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="/static/scripts/vendor/jquery.min.js"></script>
+    <script src="/static/scripts/vendor/bootstrap.min.js"></script>
+    <script src="/static/scripts/vendor/datatables.min.js"></script>
+    <script src="/static/scripts/main.js"></script>
+</body>
+</html>
