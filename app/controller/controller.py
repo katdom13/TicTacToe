@@ -10,7 +10,7 @@ def index():
 
 @game.route('/scores', methods=['GET'])
 def scores():
-	players = Record.query.all()
+	players = Record.query.order_by(db.desc(Record.score)).all()
 	return render_template("pages/scores.html", players=players)
 
 @game.route('/record', methods=['POST'])
